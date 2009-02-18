@@ -1,0 +1,6 @@
+category: Audio
+requires: cygwin GConf2 gstreamer0.10-plugins-base gstreamer0.10-plugins-cdparanoia gstreamer0.10-plugins-faad gstreamer0.10-plugins-gio gstreamer0.10-plugins-good gstreamer0.10-plugins-mad gstreamer0.10-plugins-vorbis libatk1.0_0 libcairo2 libgconf2_4 libgdk_pixbuf2.0_0 libglib2.0_0 libgnome-media-profiles0 libgstaudio0.10_0 libgstreamer0.10_0 libgtk2.0_0 libintl8 libjack0 libpango1.0_0 libsamplerate0 libsoundtouch0 libunique1.0_0
+sdesc: "GNOME audio sample editor"
+ldesc: "Marlin aims to be a fully featured and powerful sample editor 
+for the GNOME2 platform. At the moment, it records, plays, loads, saves 
+and displays samples."

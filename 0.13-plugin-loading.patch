@@ -1,0 +1,11 @@
+--- origsrc/marlin-0.13/marlin/marlin-plugin.c	2008-12-06 17:03:26.000000000 -0600
++++ src/marlin-0.13/marlin/marlin-plugin.c	2009-02-17 20:38:34.121625000 -0600
+@@ -69,7 +69,7 @@ get_plugins_in_dir (const char *path,
+ 		char *p, *ext;
+ 
+ 		ext = strrchr (d->d_name, '.');
+-		if (ext == NULL || strcmp (ext, ".so") != 0) {
++		if (ext == NULL || strcmp (ext, "."G_MODULE_SUFFIX) != 0) {
+ 			continue;
+ 		}
+ 

@@ -1,0 +1,98 @@
+--- origsrc/marlin-0.13/configure.in	2008-12-06 17:03:26.000000000 -0600
++++ src/marlin-0.13/configure.in	2009-02-17 20:33:19.887250000 -0600
+@@ -161,7 +161,7 @@ AM_GLIB_GNU_GETTEXT
+ plugindir="\$(libdir)/marlin-$MARLIN_VERSION"
+ AC_SUBST(plugindir)
+ 
+-MARLIN_PLUGIN_LDFLAGS="-module -avoid-version"
++MARLIN_PLUGIN_LDFLAGS="-module -avoid-version -no-undefined"
+ AC_SUBST(MARLIN_PLUGIN_LDFLAGS)
+ 
+ AC_ARG_ENABLE(debug,
+--- origsrc/marlin-0.13/marlin/Makefile.am	2008-12-06 17:03:26.000000000 -0600
++++ src/marlin-0.13/marlin/Makefile.am	2009-02-17 20:58:13.418500000 -0600
+@@ -21,6 +21,7 @@ libmarlin_soundtouch_la_CPPFLAGS = 		\
+ 	$(MARLIN_CFLAGS)			\
+ 	$(SOUNDTOUCH_CFLAGS)
+ libmarlin_soundtouch_la_LDFLAGS =		\
++	-no-undefined				\
+ 	$(SOUNDTOUCH_LIBS)			\
+ 	-lstdc++
+ 
+@@ -70,6 +71,9 @@ libmarlin_la_LIBADD =				\
+ 	libmarlin-soundtouch.la			\
+ 	$(MARLIN_LIBS)
+ 
++libmarlin_la_LDFLAGS =				\
++	-no-undefined
++
+ marlin_headers =				\
+ 	marlin-a11y-helper.h			\
+ 	marlin-base-window.h			\
+@@ -148,6 +152,14 @@ libmarlinx_la_CFLAGS =				\
+ 	-DMARLIN_PLUGINS_DIR=\""$(plugindir)"\"	\
+ 	-DG_LOG_DOMAIN=\"libmarlinx\"
+ 
++libmarlinx_la_LIBADD =				\
++	libmarlin.la				\
++	$(MARLINX_LIBS)				\
++	$(MARLIN_LIBS)
++
++libmarlinx_la_LDFLAGS =				\
++	-no-undefined
++
+ libmarlinincludedir = $(includedir)/libmarlin
+ libmarlininclude_HEADERS = 			\
+ 	$(marlin_headers)
+--- origsrc/marlin-0.13/plugins/Makefile.am	2008-12-06 17:03:26.000000000 -0600
++++ src/marlin-0.13/plugins/Makefile.am	2009-02-17 21:22:28.356000000 -0600
+@@ -13,6 +13,7 @@ libabout_la_CFLAGS = 				\
+ 		$(MARLINX_CFLAGS)		\
+ 		-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
+ 		-DG_LOG_DOMAIN=\"AboutPlugin\"
++libabout_la_LDFLAGS = $(MARLIN_PLUGIN_LDFLAGS)
+ libabout_la_LIBADD =				\
+ 		$(MARLIN_LIBS)			\
+ 		$(MARLINX_LIBS)			\
+@@ -30,6 +31,7 @@ libgreennoise_la_CFLAGS =			\
+ 		$(MARLINX_CFLAGS)		\
+ 		-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
+ 		-DG_LOG_DOMAIN=\"GreenNoisePlugin\"
++libgreennoise_la_LDFLAGS = $(MARLIN_PLUGIN_LDFLAGS)
+ libgreennoise_la_LIBADD =			\
+ 		$(MARLIN_LIBS)			\
+ 		$(MARLINX_LIBS)			\
+@@ -49,6 +51,7 @@ libwaveform_la_CFLAGS = 			\
+ 		$(MARLIN_CFLAGS)		\
+ 		$(MARLINX_CFLAGS)		\
+ 		-DG_LOG_DOMAIN=\"WaveformPlugin\"
++libwaveform_la_LDFLAGS = $(MARLIN_PLUGIN_LDFLAGS)
+ libwaveform_la_LIBADD =				\
+ 		$(MARLIN_LIBS)			\
+ 		$(MARLINX_LIBS)			\
+@@ -72,6 +75,7 @@ libcd_la_CFLAGS =				\
+ 		$(MUSICBRAINZ_CFLAGS)		\
+ 		$(BURN_CFLAGS)			\
+ 		-DG_LOG_DOMAIN=\"ExtractPlugin\"
++libcd_la_LDFLAGS = $(MARLIN_PLUGIN_LDFLAGS)
+ libcd_la_LIBADD =				\
+ 		$(MARLIN_LIBS)			\
+ 		$(MARLINX_LIBS)			\
+--- origsrc/marlin-0.13/src/Makefile.am	2008-12-06 17:03:26.000000000 -0600
++++ src/marlin-0.13/src/Makefile.am	2009-02-17 21:19:04.512250000 -0600
+@@ -54,12 +54,12 @@ marlin_LDADD = $(MARLIN_LIBS)			\
+ 	       $(UNIQUE_LIBS)			\
+ 	       $(BURN_LIBS)			\
+ 	       $(INTLLIBS)			\
+-	       $(top_builddir)/marlin/libmarlin.la	\
+-	       $(top_builddir)/marlin/libmarlinx.la	\
+ 	       $(top_builddir)/src/libegg/libegg.la	\
+ 	       $(top_builddir)/src/ephy/libephy.la	\
+ 	       $(top_builddir)/src/other/libother.la	\
+-	       $(top_builddir)/src/dialogs/libdialogs.la
++	       $(top_builddir)/src/dialogs/libdialogs.la	\
++	       $(top_builddir)/marlin/libmarlinx.la	\
++	       $(top_builddir)/marlin/libmarlin.la
+ 
+ schemadir = $(sysconfdir)/gconf/schemas
+ schema_DATA = marlin.schemas

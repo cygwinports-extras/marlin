@@ -1,0 +1,8 @@
+inherit gnome2
+
+DESCRIPTION="GNOME audio sample editor"
+HOMEPAGE="http://live.gnome.org/Marlin"
+SRC_URI="http://folks.o-hand.com/iain/marlin-releases/${P}.tar.bz2"
+PATCH_URI="0.13-no-undefined.patch
+           0.13-backtrace.patch
+           0.13-plugin-loading.patch"

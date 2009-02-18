@@ -1,0 +1,230 @@
+marlin
+------------------------------------------
+Marlin aims to be a fully featured and powerful sample editor for the 
+GNOME2 platform. At the moment, it records, plays, loads, saves and 
+displays samples.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+  gstreamer0.10-plugins-base
+  gstreamer0.10-plugins-cdparanoia
+  gstreamer0.10-plugins-faad
+  gstreamer0.10-plugins-gio
+  gstreamer0.10-plugins-good
+  gstreamer0.10-plugins-mad
+  gstreamer0.10-plugins-vorbis
+  libatk1.0_0-1.24.0-1
+  libcairo2-1.8.6-1
+  libgconf2_4-2.24.0-1
+  libgdk_pixbuf2.0_0-2.14.7-2
+  libglib2.0_0-2.18.4-1
+  libgnome-media-profiles0-2.24.0.1-1
+  libgstaudio0.10_0-0.10.22-1
+  libgstreamer0.10_0-0.10.22-1
+  libgtk2.0_0-2.14.7-2
+  libintl8-0.17-2
+  libjack0-0.116.2-1
+  libpango1.0_0-1.22.4-1
+  libsamplerate0-0.1.7-1
+  libsoundtouch0-1.3.1-1
+  libunique1.0_0-1.0.6-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.63-1
+  automake1.10-1.10.1-2
+  binutils-20080624-2
+  cygport-0.4.3-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  gnome-common-2.24.0-1
+  intltool-0.40.5-1
+  libtool-2.2.6a-1
+  make-3.81-1
+  pkg-config-0.23a-2
+  sed-4.1.5-2
+
+Canonical website:
+  http://live.gnome.org/Marlin
+
+Canonical download:
+  http://folks.o-hand.com/iain/marlin-releases/
+
+-------------------------------------------
+
+Build instructions:
+  unpack marlin-0.13-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./marlin-0.13-X.cygport all
+
+This will create:
+  /usr/src/marlin-0.13-X-src.tar.bz2
+  /usr/src/marlin-0.13-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /etc/gconf/schemas/marlin.schemas
+  /etc/postinstall/marlin.sh
+  /etc/preremove/marlin.sh
+  /usr/bin/cygmarlin-0.dll
+  /usr/bin/cygmarlin-soundtouch-0.dll
+  /usr/bin/cygmarlinx-0.dll
+  /usr/bin/marlin.exe
+  /usr/include/libmarlin/marlin-a11y-helper.h
+  /usr/include/libmarlin/marlin-base-window.h
+  /usr/include/libmarlin/marlin-block.h
+  /usr/include/libmarlin/marlin-channel-joiner.h
+  /usr/include/libmarlin/marlin-channel-sink.h
+  /usr/include/libmarlin/marlin-channel-splitter.h
+  /usr/include/libmarlin/marlin-channel-src.h
+  /usr/include/libmarlin/marlin-channel.h
+  /usr/include/libmarlin/marlin-cross-fader.h
+  /usr/include/libmarlin/marlin-cursors.h
+  /usr/include/libmarlin/marlin-file-chooser.h
+  /usr/include/libmarlin/marlin-file-utils.h
+  /usr/include/libmarlin/marlin-file.h
+  /usr/include/libmarlin/marlin-grid-point.h
+  /usr/include/libmarlin/marlin-grid.h
+  /usr/include/libmarlin/marlin-gst-extras.h
+  /usr/include/libmarlin/marlin-jack-play.h
+  /usr/include/libmarlin/marlin-jack-record.h
+  /usr/include/libmarlin/marlin-jack.h
+  /usr/include/libmarlin/marlin-level-ruler.h
+  /usr/include/libmarlin/marlin-list.h
+  /usr/include/libmarlin/marlin-load-pipeline.h
+  /usr/include/libmarlin/marlin-marker-model.h
+  /usr/include/libmarlin/marlin-marker-view.h
+  /usr/include/libmarlin/marlin-msgport.h
+  /usr/include/libmarlin/marlin-mt.h
+  /usr/include/libmarlin/marlin-operation.h
+  /usr/include/libmarlin/marlin-overview-bar.h
+  /usr/include/libmarlin/marlin-pipeline.h
+  /usr/include/libmarlin/marlin-play-pipeline.h
+  /usr/include/libmarlin/marlin-plugin.h
+  /usr/include/libmarlin/marlin-position-spinner.h
+  /usr/include/libmarlin/marlin-program.h
+  /usr/include/libmarlin/marlin-progress-dialog.h
+  /usr/include/libmarlin/marlin-read-write-lock.h
+  /usr/include/libmarlin/marlin-record-pipeline.h
+  /usr/include/libmarlin/marlin-sample-drawing.h
+  /usr/include/libmarlin/marlin-sample-selection.h
+  /usr/include/libmarlin/marlin-sample-view.h
+  /usr/include/libmarlin/marlin-sample.h
+  /usr/include/libmarlin/marlin-save-pipeline.h
+  /usr/include/libmarlin/marlin-soundtouch.h
+  /usr/include/libmarlin/marlin-stock.h
+  /usr/include/libmarlin/marlin-types.h
+  /usr/include/libmarlin/marlin-undo-manager.h
+  /usr/include/libmarlin/marlin-undoable.h
+  /usr/include/libmarlin/marlin-utils.h
+  /usr/include/libmarlin/marlin-x-utils.h
+  /usr/lib/libmarlin-soundtouch.dll.a
+  /usr/lib/libmarlin-soundtouch.la
+  /usr/lib/libmarlin.dll.a
+  /usr/lib/libmarlin.la
+  /usr/lib/libmarlinx.dll.a
+  /usr/lib/libmarlinx.la
+  /usr/lib/marlin-0.13/cygabout.dll
+  /usr/lib/marlin-0.13/cygcd.dll
+  /usr/lib/marlin-0.13/cyggreennoise.dll
+  /usr/lib/marlin-0.13/cygwaveform.dll
+  /usr/lib/marlin-0.13/libabout.la
+  /usr/lib/marlin-0.13/libcd.la
+  /usr/lib/marlin-0.13/libgreennoise.la
+  /usr/lib/marlin-0.13/libwaveform.la
+  /usr/share/applications/marlin.desktop
+  /usr/share/doc/marlin-0.13/AUTHORS
+  /usr/share/doc/marlin-0.13/ChangeLog
+  /usr/share/doc/marlin-0.13/NEWS
+  /usr/share/doc/marlin-0.13/README
+  /usr/share/doc/marlin-0.13/TODO
+  /usr/share/gnome/help/marlin/C/figures/marlin-main-window.png
+  /usr/share/gnome/help/marlin/C/figures/new_sample_dialog.png
+  /usr/share/gnome/help/marlin/C/figures/new_sample_dialog_cancel.png
+  /usr/share/gnome/help/marlin/C/figures/new_sample_dialog_channels.png
+  /usr/share/gnome/help/marlin/C/figures/new_sample_dialog_create.png
+  /usr/share/gnome/help/marlin/C/figures/new_sample_dialog_help.png
+  /usr/share/gnome/help/marlin/C/figures/new_sample_dialog_rate.png
+  /usr/share/gnome/help/marlin/C/legal.xml
+  /usr/share/gnome/help/marlin/C/marlin.xml
+  /usr/share/icons/hicolor/48x48/apps/marlin.png/marlin.png
+  /usr/share/locale/ar/LC_MESSAGES/marlin.mo
+  /usr/share/locale/ca/LC_MESSAGES/marlin.mo
+  /usr/share/locale/cs/LC_MESSAGES/marlin.mo
+  /usr/share/locale/de/LC_MESSAGES/marlin.mo
+  /usr/share/locale/dz/LC_MESSAGES/marlin.mo
+  /usr/share/locale/el/LC_MESSAGES/marlin.mo
+  /usr/share/locale/en_CA/LC_MESSAGES/marlin.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/marlin.mo
+  /usr/share/locale/es/LC_MESSAGES/marlin.mo
+  /usr/share/locale/fi/LC_MESSAGES/marlin.mo
+  /usr/share/locale/fr/LC_MESSAGES/marlin.mo
+  /usr/share/locale/ga/LC_MESSAGES/marlin.mo
+  /usr/share/locale/hr/LC_MESSAGES/marlin.mo
+  /usr/share/locale/it/LC_MESSAGES/marlin.mo
+  /usr/share/locale/ko/LC_MESSAGES/marlin.mo
+  /usr/share/locale/nb/LC_MESSAGES/marlin.mo
+  /usr/share/locale/ne/LC_MESSAGES/marlin.mo
+  /usr/share/locale/nl/LC_MESSAGES/marlin.mo
+  /usr/share/locale/oc/LC_MESSAGES/marlin.mo
+  /usr/share/locale/pa/LC_MESSAGES/marlin.mo
+  /usr/share/locale/pt/LC_MESSAGES/marlin.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/marlin.mo
+  /usr/share/locale/rw/LC_MESSAGES/marlin.mo
+  /usr/share/locale/sr/LC_MESSAGES/marlin.mo
+  /usr/share/locale/sr@Latn/LC_MESSAGES/marlin.mo
+  /usr/share/locale/sv/LC_MESSAGES/marlin.mo
+  /usr/share/locale/tr/LC_MESSAGES/marlin.mo
+  /usr/share/locale/uk/LC_MESSAGES/marlin.mo
+  /usr/share/locale/vi/LC_MESSAGES/marlin.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/marlin.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/marlin.mo
+  /usr/share/marlin/ui/marlin.xml
+  /usr/share/marlin/ui/toolbar-popup-ui.xml
+  /usr/share/marlin/ui/toolbars.xml
+  /usr/share/omf/marlin/marlin-C.omf
+  /usr/share/pixmaps/marlin/hand-open.png
+  /usr/share/pixmaps/marlin/marlin-cd.png
+  /usr/share/pixmaps/marlin/marlin-cdda-extract.png
+  /usr/share/pixmaps/marlin/marlin-ffwd.png
+  /usr/share/pixmaps/marlin/marlin-logo.png
+  /usr/share/pixmaps/marlin/marlin-new-sample.png
+  /usr/share/pixmaps/marlin/marlin-new-view.png
+  /usr/share/pixmaps/marlin/marlin-next.png
+  /usr/share/pixmaps/marlin/marlin-paste-as-new.png
+  /usr/share/pixmaps/marlin/marlin-paste-into.png
+  /usr/share/pixmaps/marlin/marlin-pause.png
+  /usr/share/pixmaps/marlin/marlin-play.png
+  /usr/share/pixmaps/marlin/marlin-plugin-sine.png
+  /usr/share/pixmaps/marlin/marlin-previous.png
+  /usr/share/pixmaps/marlin/marlin-record.png
+  /usr/share/pixmaps/marlin/marlin-repeat.png
+  /usr/share/pixmaps/marlin/marlin-rewind.png
+  /usr/share/pixmaps/marlin/marlin-select-all.png
+  /usr/share/pixmaps/marlin/marlin-select-none.png
+  /usr/share/pixmaps/marlin/marlin-selection-grow.png
+  /usr/share/pixmaps/marlin/marlin-selection-shrink.png
+  /usr/share/pixmaps/marlin/marlin-sine-logo.png
+  /usr/share/pixmaps/marlin/marlin-sound-properties.png
+  /usr/share/pixmaps/marlin/marlin-stop.png
+  /usr/share/pixmaps/marlin/marlin-undo-history.png
+  /usr/share/pixmaps/marlin/marlin-zoom-in-h.png
+  /usr/share/pixmaps/marlin/marlin-zoom-in-v.png
+  /usr/share/pixmaps/marlin/marlin-zoom-out-h.png
+  /usr/share/pixmaps/marlin/marlin-zoom-out-v.png
+  /usr/share/pixmaps/marlin/marlin.png
+
+------------------
+
+Port Notes:
+
+----- version 0.13-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
